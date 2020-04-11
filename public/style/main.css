@@ -1,0 +1,351 @@
+body {
+  height: 100vh;
+}
+
+.navbar {
+  background-color: #300240 !important;
+}
+
+.btn-login {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border-radius: 20px;
+  margin-top: -1px;
+  margin-bottom: -8px;
+  margin-right: -18px;
+  font-family: assistant;
+  color: rgba(255, 215, 0, 0.6);
+  background-color: transparent;
+}
+
+.btn-login:hover {
+  background-color: rgba(114, 56, 202, 0.49);
+  color: gold;
+}
+
+header {
+  padding-top: 300px;
+  padding-bottom: 270px;
+  margin-top: -100px;
+  background-image: url("../images/header.jpg");
+  background-size: cover;
+}
+
+header h2 {
+  margin-left: 150px;
+  color: white;
+  font-family: 'Playfair Display', serif;
+}
+
+header .btn-get-started {
+  margin-left: 150px;
+  width: 150px;
+  height: 40px;
+  background-color: #efcc4a;
+  border: none;
+  color: #300240;
+}
+
+header .btn-get-started:hover {
+  background-color: #E9C43A;
+  color: #300240;
+}
+
+.bg-linear {
+  height: 342px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(114, 56, 202, 0.49)), to(#fff));
+  background: linear-gradient(rgba(114, 56, 202, 0.49) 0%, #fff 100%);
+  opacity: 0.25;
+}
+
+.section-paket-istimewa {
+  margin-top: -300px;
+}
+
+.section-paket-istimewa h2 {
+  font-family: Assistant;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 45px;
+  text-align: left;
+  color: #300240;
+}
+
+.section-paket-istimewa .card-paket-istimewa {
+  min-height: 500px;
+}
+
+.section-paket-istimewa .card-paket-istimewa .title-paket-istimewa h3 {
+  color: white;
+  font-size: 30px;
+  font-family: 'Assistant', sans-serif;
+  border: none;
+}
+
+.section-paket-istimewa .card-paket-istimewa .istimewa-button .link-to-details {
+  background-color: #EFCC4A;
+  color: #300240;
+}
+
+.section-paket-istimewa .card-paket-istimewa .istimewa-button .link-to-details:hover {
+  background-color: #F1C41F;
+  color: #300240;
+}
+
+.section-statistika h2 {
+  font-family: Assistant;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 45px;
+  text-align: left;
+  color: #300240;
+  margin-top: 100px;
+}
+
+.section-statistika h4 {
+  padding-top: 10px;
+  font-family: Assistant;
+  font-weight: bold;
+  font-size: 45px;
+  line-height: 50px;
+  text-align: center;
+  color: #fff;
+}
+
+.section-statistika p {
+  font-family: Assistant;
+  font-weight: lighter;
+  font-size: 30px;
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.section-testimonial {
+  margin-top: 100px;
+}
+
+.section-testimonial h2 {
+  font-family: Assistant;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 45px;
+  text-align: left;
+  color: #300240;
+  margin-top: 100px;
+}
+
+.section-testimonial .card {
+  min-height: 450px;
+  border-radius: 0px;
+}
+
+.section-testimonial .card .card-title {
+  font-family: Assistant;
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 45px;
+  color: #300240;
+  margin-bottom: 20px;
+}
+
+.section-testimonial .card .card-text {
+  font-family: Montserrat;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 30px;
+  color: #300240;
+}
+
+.section-footer h5 {
+  font-size: 22px;
+  color: #300240;
+  font-weight: 600;
+}
+
+.section-footer a {
+  font-size: 18px;
+  color: #300240;
+}
+
+.section-travel-detail {
+  margin-top: -300px;
+  min-height: 100vh;
+}
+
+.section-travel-detail .breadcrumb {
+  background-color: transparent;
+}
+
+.section-travel-detail .breadcrumb .breadcrumb-item {
+  font-weight: lighter;
+}
+
+.section-travel-detail .breadcrumb .breadcrumb-item.active {
+  color: #300240;
+  font-weight: bold;
+}
+
+.section-travel-detail .card-detail h1 {
+  font-family: Assistant;
+  font-weight: bold;
+  text-align: left;
+  color: #300240;
+}
+
+.section-travel-detail .card-detail .img-featured {
+  float: left;
+  width: 45px;
+  height: 45px;
+}
+
+.section-travel-detail .card-detail .description {
+  float: left;
+  margin-left: 10px;
+  overflow: hidden;
+}
+
+.section-travel-detail .card-detail .description h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 0;
+  color: #300240;
+}
+
+.section-travel-detail .card-detail .description p {
+  font-size: 18px;
+  font-weight: lighter;
+  margin-bottom: 0;
+  color: #A4A4A4;
+}
+
+.section-travel-detail .members {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.section-travel-detail h4 {
+  font-family: Assistant;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 45px;
+  text-align: left;
+  color: #300240;
+}
+
+.section-travel-detail .trip-information th {
+  font-weight: 300;
+  font-size: 18px;
+  color: #300240;
+}
+
+.section-travel-detail .trip-information td {
+  font-size: 18px;
+  color: #AAAAAA;
+  font-weight: lighter;
+}
+
+.section-travel-detail .trip-information .text-blue {
+  color: #300240;
+  font-weight: bold;
+}
+
+.section-travel-detail .trip-information .text-orange {
+  color: #FF913B;
+  font-weight: bold;
+}
+
+.section-travel-detail .join-container {
+  margin-top: -16px;
+}
+
+.section-travel-detail .join-container .btn-join-now {
+  background-color: #300240;
+  color: white;
+  border-radius: 0;
+}
+
+.section-travel-detail .join-container .btn-join-now:hover {
+  background-color: #3e0352;
+}
+
+.section-checkout-detail {
+  margin-top: -280px;
+}
+
+.section-checkout-detail .breadcrumb {
+  background-color: transparent;
+}
+
+.section-checkout-detail .breadcrumb .breadcrumb-item {
+  font-weight: lighter;
+}
+
+.section-checkout-detail .breadcrumb .breadcrumb-item.active {
+  color: #300240;
+  font-weight: bold;
+}
+
+.section-checkout-detail .card-checkout thead td {
+  font-weight: lighter;
+}
+
+.section-checkout-detail .card-checkout .btn-add-now {
+  background-color: #300240;
+  color: white;
+  padding: 5px 30px 5px 30px;
+  font-family: 'assistant';
+}
+
+.section-checkout-detail .card-checkout .btn-add-now:hover {
+  background-color: #5a0079;
+}
+
+.section-checkout-detail .card-checkout h5 {
+  color: #300240;
+}
+
+.section-checkout-detail .card-information-checkout h2 {
+  color: #300240;
+  font-size: 25px;
+}
+
+.section-checkout-detail .card-information-checkout h3 {
+  color: #300240;
+  font-size: 20px;
+}
+
+.section-checkout-detail .card-information-checkout h4 {
+  color: #300240;
+  font-size: 18px;
+}
+
+.section-checkout-detail .btn-next-payment {
+  background-color: #EFCC4A;
+  color: #300240;
+}
+
+.section-checkout-detail .btn-next-payment:hover {
+  background-color: #ffce1b;
+}
+
+::-webkit-scrollbar {
+  height: 3px;
+  width: 3px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0);
+  border-radius: 5ex;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #300240;
+}
+
+::-webkit-scrollbar-corner {
+  background: #000;
+}
+/*# sourceMappingURL=main.css.map */

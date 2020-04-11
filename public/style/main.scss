@@ -1,0 +1,322 @@
+body {
+    height: 100vh;
+}
+
+.navbar {
+    background-color: #300240 !important;
+}
+
+.btn-login {
+    align-self: center;
+    border-radius: 20px;
+    margin-top: -1px;
+    margin-bottom: -8px;
+    margin-right: -18px;
+    font-family: assistant;
+    color: rgba(255, 215, 0, .6);
+    background-color: transparent;
+    &:hover {
+        background-color: rgba(114, 56, 202, 0.49);
+        color: gold;
+    }
+}
+
+header {
+    padding-top: 300px;
+    padding-bottom: 270px;
+    margin-top: -100px;
+    background-image: url("../images/header.jpg");
+    background-size: cover;
+    h2 {
+        margin-left: 150px;
+        color: white;
+        font-family: 'Playfair Display', serif;
+    }
+    .btn-get-started {
+        margin-left: 150px;
+        width: 150px;
+        height: 40px;
+        background-color: #efcc4a;
+        border: none;
+        color: #300240;
+        &:hover {
+            background-color: #E9C43A;
+            color: #300240;
+            ;
+        }
+    }
+}
+
+.bg-linear {
+    height: 342px;
+    background: linear-gradient(rgba(114, 56, 202, 0.49) 0%, #fff 100%);
+    opacity: 0.25;
+}
+
+.section-paket-istimewa {
+    margin-top: -300px;
+    h2 {
+        font-family: Assistant;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 45px;
+        text-align: left;
+        color: #300240;
+    }
+    .card-paket-istimewa {
+        min-height: 500px;
+        .title-paket-istimewa {
+            h3 {
+                color: white;
+                font-size: 30px;
+                font-family: 'Assistant', sans-serif;
+                border: none;
+            }
+        }
+        .istimewa-button {
+            .link-to-details {
+                background-color: #EFCC4A;
+                color: #300240;
+                &:hover {
+                    background-color: #F1C41F;
+                    color: #300240;
+                }
+            }
+        }
+    }
+}
+
+.section-statistika {
+    h2 {
+        font-family: Assistant;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 45px;
+        text-align: left;
+        color: #300240;
+        margin-top: 100px;
+    }
+    h4 {
+        padding-top: 10px;
+        font-family: Assistant;
+        font-weight: bold;
+        font-size: 45px;
+        line-height: 50px;
+        text-align: center;
+        color: #fff;
+    }
+    p {
+        font-family: Assistant;
+        font-weight: lighter;
+        font-size: 30px;
+        line-height: 20px;
+        text-align: center;
+        color: #fff;
+    }
+}
+
+.section-testimonial {
+    margin-top: 100px;
+    h2 {
+        font-family: Assistant;
+        font-weight: bold;
+        font-size: 25px;
+        line-height: 45px;
+        text-align: left;
+        color: #300240;
+        margin-top: 100px;
+    }
+    .card {
+        min-height: 450px;
+        border-radius: 0px;
+        .card-title {
+            font-family: Assistant;
+            font-weight: bold;
+            font-size: 25px;
+            line-height: 45px;
+            color: #300240;
+            margin-bottom: 20px;
+        }
+        .card-text {
+            font-family: Montserrat;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 30px;
+            color: #300240;
+        }
+    }
+}
+
+// FOOTER
+.section-footer {
+    h5 {
+        font-size: 22px;
+        color: #300240;
+        font-weight: 600;
+    }
+    a {
+        font-size: 18px;
+        color: #300240;
+    }
+}
+
+.section-travel-detail {
+    margin-top: -300px;
+    min-height: 100vh;
+    .breadcrumb {
+        background-color: transparent;
+        .breadcrumb-item {
+            font-weight: lighter;
+            &.active {
+                color: #300240;
+                font-weight: bold;
+            }
+        }
+    }
+    .card-detail {
+        h1 {
+            font-family: Assistant;
+            font-weight: bold;
+            text-align: left;
+            color: #300240;
+        }
+        .img-featured {
+            float: left;
+            width: 45px;
+            height: 45px;
+        }
+        .description {
+            float: left;
+            margin-left: 10px;
+            overflow: hidden;
+            h3 {
+                font-size: 18px;
+                font-weight: 500;
+                margin-bottom: 0;
+                color: #300240;
+            }
+            p {
+                font-size: 18px;
+                font-weight: lighter;
+                margin-bottom: 0;
+                color: #A4A4A4;
+            }
+        }
+    }
+    .members {
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+    h4 {
+        font-family: Assistant;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 45px;
+        text-align: left;
+        color: #300240;
+    }
+    .trip-information {
+        th {
+            font-weight: 300;
+            font-size: 18px;
+            color: #300240;
+        }
+        td {
+            font-size: 18px;
+            color: #AAAAAA;
+            font-weight: lighter;
+        }
+        .text-blue {
+            color: #300240;
+            font-weight: bold;
+        }
+        .text-orange {
+            color: #FF913B;
+            font-weight: bold;
+        }
+    }
+    .join-container {
+        margin-top: -16px;
+        .btn-join-now {
+            background-color: #300240;
+            color: white;
+            border-radius: 0;
+            &:hover {
+                background-color: #3e0352;
+            }
+        }
+    }
+}
+
+.section-checkout-detail {
+    margin-top: -280px;
+    .breadcrumb {
+        background-color: transparent;
+        .breadcrumb-item {
+            font-weight: lighter;
+            &.active {
+                color: #300240;
+                font-weight: bold;
+            }
+        }
+    }
+    .card-checkout {
+        thead {
+            td {
+                font-weight: lighter;
+            }
+        }
+        .btn-add-now {
+            background-color: #300240;
+            color: white;
+            padding: 5px 30px 5px 30px;
+            font-family: 'assistant';
+            &:hover {
+                background-color: #5a0079;
+            }
+        }
+        h5 {
+            color: #300240;
+        }
+    }
+    .card-information-checkout {
+        h2 {
+            color: #300240;
+            font-size: 25px;
+        }
+        h3 {
+            color: #300240;
+            font-size: 20px;
+        }
+        h4 {
+            color: #300240;
+            font-size: 18px;
+        }
+    }
+    .btn-next-payment {
+        background-color: #EFCC4A;
+        color: #300240;
+        &:hover {
+            background-color: rgb(255, 206, 27);
+        }
+    }
+}
+
+// JS
+::-webkit-scrollbar {
+    height: 3px;
+    width: 3px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0);
+    border-radius: 5ex;
+    &:hover {
+        background: #300240;
+    }
+}
+
+::-webkit-scrollbar-corner {
+    background: #000;
+}

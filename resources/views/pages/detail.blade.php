@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @push('tambah-akhir-style')
-  <link rel="stylesheet" href="libraries/xzoom/xzoom.css">
+  <link rel="stylesheet" href="{{ url('libraries/xzoom/xzoom.css') }}">
 @endpush
 
 @section('content')
@@ -24,68 +24,59 @@
             <div class="row">
               <div class="col-12">
                 <div class="card card-detail mx-auto p-4">
-                  <h1>BROMO</h1>
-                  <p class="text-muted" style="font-size: large;">Republic Of Indonesia</p>
+                  <h1>{{ $item->title }}</h1>
+                  <p class="text-muted" style="font-size: large;">{{ $item->location }}</p>
 
-                  <div class="gallery">
-                    <div class="xzoom-container">
-                      <img src="images/bromo.jpg" class="xzoom mt-3 mb-2" id="xzoom-default" width="100%" height="400px">
+                  @if ($item->galleries->count())
+                    <div class="gallery">
+                      <div class="xzoom-container">
+                        <img src="{{ Storage::url($item->galleries->first()->images )}}" class="xzoom mt-3 mb-2" id="xzoom-default" width="100%" height="400px" xoriginal="{{ Storage::url($item->galleries->first()->images )}}">
+                      </div>
+                      <!-- thumbnails of gallery -->
+                      <div class="xzoom-thumbs mb-5 text-center">
+                      
+                        @foreach ($item->galleries as $gallery)
+                          <a href="{{ Storage::url($gallery->images) }}">
+                            <img src="{{ Storage::url($gallery->images) }}" width="127.2" height="80" class="xzoom-gallery" xpreview="{{ Storage::url($gallery->images) }}">
+                          </a>
+                        @endforeach
+
+                      </div>
                     </div>
-                    <!-- thumbnails of gallery -->
-                    <div class="xzoom-thumbs mb-5">
-                      <a href="images/bromo.jpg">
-                        <img src="images/bromo.jpg" width="127.2" height="80" class="xzoom-gallery" xpreview="images/bromo.jpg">
-                      </a>
-                      <a href="images/header.jpg">
-                        <img src="images/header.jpg" width="127.2" height="80" class="xzoom-gallery" xpreview="images/header.jpg">
-                      </a>
-                      <a href="images/bromo-2.jpg">
-                        <img src="images/bromo-2.jpg" width="127.2" height="80" class="xzoom-gallery" xpreview="images/bromo-2.jpg">
-                      </a>
-                      <a href="images/bromo-3.jpg">
-                        <img src="images/bromo-3.jpg" width="127.2" height="80" class="xzoom-gallery" xpreview="images/bromo-3.jpg">
-                      </a>
-                      <a href="images/bromo-4.jpg">
-                        <img src="images/bromo-4.jpg" width="127.2" height="80" class="xzoom-gallery" xpreview="images/bromo-4.jpg">
-                      </a>
-                    </div>
-                  </div>
+                  @endif
 
                   <h3>Tentang Wisata</h3>
                   <p class="text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit ad excepturi tempore adipisci possimus minus at id laborum corrupti provident. Voluptatibus, eum quidem. Eius, aspernatur provident neque ratione asperiores dolorum?
-                  </p>
-                  <p class="text-muted">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui perferendis numquam doloribus animi enim similique quod maiores, accusantium commodi ullam molestiae corrupti, nostrum officiis rem nulla quo nam. Ut, numquam.
+                    {!! $item->about !!}
                   </p>
 
                   <div class="row features pt-4">
                     <div class="col-md-4 border-right">
-                      <img src="images/ic_event.png" alt="" class="img-featured">
+                      <img src="{{ url('images/ic_event.png') }}" alt="" class="img-featured">
                       <div class="description">
                         <h3>Featured Event</h3>
                         <p>
-                          Camp and BBQ
+                          {{ $item->featured_event }}
                         </p>
                       </div>
                     </div>
 
                     <div class="col-md-4 border-right">
-                      <img src="images/ic_foods.png" alt="" class="img-featured">
+                      <img src="{{ url('images/ic_foods.png') }}" alt="" class="img-featured">
                       <div class="description">
                         <h3>Foods</h3>
                         <p>
-                          Ikan bakar
+                          {{ $item->foods }}
                         </p>
                       </div>
                     </div>
 
                     <div class="col-md-4">
-                      <img src="images/ic_language.png" alt="" class="img-featured">
+                      <img src="{{ url('images/ic_language.png') }}" alt="" class="img-featured">
                       <div class="description">
                         <h3>Language</h3>
                         <p>
-                          Bahasa Indonesia
+                          {{ $item->language }}
                         </p>
                       </div>
                     </div>
@@ -113,24 +104,24 @@
               <table class="trip-information">
                 <tr>
                   <th width="50%">Date of Departure</th>
-                  <td width="50%" class="text-right">19 Aug, 2020</td>
+                  <td width="50%" class="text-right">{{ \Carbon\Carbon::create($item->date_departure)->format('F n, Y') }}</td>
               </tr>
               <tr>
                   <th width="50%">Duration</th>
                   <td width="50%" class="text-right">
-                      4D 3N
+                      {{ $item->day }}D {{ $item->night}}N
                   </td>
               </tr>
               <tr>
                   <th width="50%">Type of Trip</th>
                   <td width="50%" class="text-right">
-                      Open Trip
+                      {{ $item->type }}
                   </td>
               </tr>
               <tr>
                   <th width="50%">Price</th>
                   <td width="50%" class="text-right">
-                      $80,00 / person
+                      ${{ $item->price }},00 / person
                   </td>
               </tr> 
               </table>
@@ -139,9 +130,19 @@
             </div>
 
             <div class="join-container">
-              <a href="{{ route('checkout') }}" class="btn btn-block btn-join-now mt-3 py-2">
-                  Join Now
-              </a>
+              @auth
+                <form action="{{ route('checkout_process', $item->id )}}" method="post">
+                  @csrf
+                  <button submit="type" class="btn btn-block btn-join-now mt-3 py-2">
+                    Join Now
+                  </button>
+                </form>
+              @endauth
+              @guest
+                <a href="{{ route('checkout') }}" class="btn btn-block btn-join-now mt-3 py-2">
+                  Login or Register to Join
+                </a>
+              @endguest
             </div>
 
 
@@ -152,7 +153,7 @@
 @endsection
 
 @push('tambah-akhir-script')
-  <script src="libraries/xzoom/xzoom.min.js"></script>
+  <script src="{{ url('libraries/xzoom/xzoom.min.js') }}"></script>
   <script>
     $(document).ready(function(){
 

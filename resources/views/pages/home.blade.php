@@ -20,44 +20,22 @@
         <section class="section-paket-istimewa" id="paket-istimewa">
             <h2>Paket Istimewa</h2>
             <div class="row text-center">
-                <div class="col-12 col-sm-6 col-md-4 col-lg-4 pt-3">
-                    <div class="card-paket-istimewa rounded-0 d-flex flex-column text-center" style="background-image: url('../images/bg-bromo.jpg'); background-size: cover;">
-                        <div class="title-paket-istimewa py-5">
-                            <h3>BROMO</h3>
-                        </div>
-                        <div class="istimewa-button mt-auto pb-4">
-                             <a href="{{ route('detail') }}" class="btn link-to-details px-4 py-2">
-                                View Detail
-                            </a>
+                
+                @foreach ($items as $item)
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-4 pt-3">
+                        <div class="card-paket-istimewa rounded-0 d-flex flex-column text-center px-3" style="background-image: url('{{ $item->galleries->count() ? Storage::url($item->galleries->first()->images) : 'Gambar tidak ada' }}'); background-size: cover;">
+                            <div class="title-paket-istimewa py-5">
+                                <h3>{{ $item->title }}</h3>
+                            </div>
+                            <div class="istimewa-button mt-auto pb-4">
+                                <a href="{{ route('detail', $item->slug) }}" class="btn link-to-details px-4 py-2">
+                                    View Detail
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
+                @endforeach
 
-                <div class="col-12 col-sm-6 col-md-4 col-lg-4 pt-3">
-                    <div class="card-paket-istimewa rounded-0 d-flex flex-column text-center" style="background-image: url('../images/bg-bali.jpg'); background-size: cover;">
-                        <div class="title-paket-istimewa py-5">
-                        <h3>EVERYDAY IN BALI</h3>
-                        </div>
-                        <div class="istimewa-button mt-auto pb-4">
-                        <a href="{{ route('detail') }}" class="btn link-to-details px-4 py-2">
-                            View Detail
-                        </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-md-4 col-lg-4 pt-3">
-                <div class="card-paket-istimewa rounded-0 d-flex flex-column text-center" style="background-image: url('../images/bg-raja-ampat.jpg'); background-size: cover;">
-                    <div class="title-paket-istimewa py-5">
-                        <h3>RAJA AMPAT</h3>
-                    </div>
-                    <div class="istimewa-button mt-auto pb-4">
-                        <a href="{{ route('detail') }}" class="btn link-to-details px-4 py-2">
-                        View Detail
-                        </a>
-                    </div>
-                </div>
-            </div>
         </section>
 
         <section class="section-statistika" id="statistika">

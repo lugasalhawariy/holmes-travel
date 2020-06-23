@@ -46,6 +46,7 @@ class TransactionController extends Controller
      */
     public function store(TransactionRequest $request)
     {
+        // ambil semua request dari client
         $data = $request->all();
         $data['images'] = $request->file('images')->store(
             'assets/transaction', 'public'

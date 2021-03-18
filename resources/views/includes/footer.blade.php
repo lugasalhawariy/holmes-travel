@@ -42,10 +42,10 @@
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row justify-content-center align-items-center border-top pt-4 pb-0">
+        <div class="container-fluid pb-4">
+            <div class="row justify-content-center align-items-center border-top pt-4">
                 <div class="col-auto text-gray-500 font-weight-light">
-                    2019 Copyright Holmes • All right reserved • Made in Yogyakarta
+                    2019 Copyright Lugas Alhawariy • All right reserved • Made in Yogyakarta
                 </div>
             </div>
         </div>

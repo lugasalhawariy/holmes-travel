@@ -23,7 +23,7 @@
                 
                 @foreach ($items as $item)
                     <div class="col-12 col-sm-6 col-md-4 col-lg-4 pt-3">
-                        <div class="card-paket-istimewa rounded-0 d-flex flex-column text-center px-3" style="background-image: url('{{ $item->galleries->count() ? Storage::url($item->galleries->first()->images) : 'Gambar tidak ada' }}'); background-size: cover;">
+                        <div class="card-paket-istimewa rounded d-flex flex-column text-center px-3" style="background-image: url('{{ $item->galleries->count() ? Storage::url($item->galleries->first()->images) : 'Gambar tidak ada' }}'); background-size: cover;">
                             <div class="title-paket-istimewa py-5">
                                 <h3>{{ $item->title }}</h3>
                             </div>

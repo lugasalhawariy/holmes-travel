@@ -90,14 +90,14 @@
             <div class="card card-visit px-3 py-3">
               <h4>Members</h4>
               <div class="members d-flex mt-2 pb-4">
-                <img src="images/user_testimonial_1.png" class="rounded-circle mx-1" width="45px">
-                <img src="images/user_testimonial_2.png" class="rounded-circle mx-1" width="45px">
-                <img src="images/user_testimonial_3.png" class="rounded-circle mx-1" width="45px">
-                <img src="images/user_testimonial_4.png" class="rounded-circle mx-1" width="45px">
-                <img src="images/user_testimonial_1.png" class="rounded-circle mx-1" width="45px">
-                <img src="images/user_testimonial_2.png" class="rounded-circle mx-1" width="45px">
-                <img src="images/user_testimonial_3.png" class="rounded-circle mx-1" width="45px">
-                <img src="images/user_testimonial_4.png" class="rounded-circle mx-1" width="45px">
+                <img src="{{ asset('images/user_testimonial_1.png')}}" class="rounded-circle mx-1" width="45px">
+                <img src="{{ asset('images/user_testimonial_2.png')}}" class="rounded-circle mx-1" width="45px">
+                <img src="{{ asset('images/user_testimonial_3.png')}}" class="rounded-circle mx-1" width="45px">
+                <img src="{{ asset('images/user_testimonial_4.png')}}" class="rounded-circle mx-1" width="45px">
+                <img src="{{ asset('images/user_testimonial_5.png')}}" class="rounded-circle mx-1" width="45px">
+                <img src="{{ asset('images/user_testimonial_6.png')}}" class="rounded-circle mx-1" width="45px">
+                <img src="{{ asset('images/user_testimonial_7.png')}}" class="rounded-circle mx-1" width="45px">
+                <img src="{{ asset('images/user_testimonial_8.png')}}" class="rounded-circle mx-1" width="45px">
               </div>
 
               <h4 class="pt-3 pb-2">Trip Information</h4>

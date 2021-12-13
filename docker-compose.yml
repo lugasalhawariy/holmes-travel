@@ -1,0 +1,69 @@
+version: "3.7"
+services:
+
+  # berdasarkan Dockerfile
+  app:
+    build:
+      args:
+        user: lugasdev
+        uid: 1000
+      context: ./
+      dockerfile: Dockerfile
+    image: holmes
+    container_name: holmes-app
+    restart: unless-stopped
+    working_dir: /var/www/
+    volumes:
+      - ./:/var/www
+    networks:
+      - holmes
+  
+  # database menggunakan mysql (cek di folder docker-compose)
+  db:
+    image: mysql:5.7
+    container_name: holmes-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+    networks:
+      - holmes
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    links:
+        - db:db
+    ports:
+        - 8081:80
+    environment:
+        - MYSQL_USERNAME=${DB_USERNAME}
+        - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+        - PMA_HOST=db
+    depends_on: 
+        - db
+    networks: 
+        - holmes
+  
+  # server menggunakan nginx (cek di folder docker-compose)
+  nginx:
+    image: nginx:1.17-alpine
+    container_name: holmes-nginx
+    restart: unless-stopped
+    ports:
+      - 8000:80
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d
+    networks:
+      - holmes
+
+networks:
+  holmes:
+    driver: bridge
+
